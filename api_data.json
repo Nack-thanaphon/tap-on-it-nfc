@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "order_number": "ORD-001",
+    "customer_name": "John Doe",
+    "title": "Premium Coffee Beans",
+    "url": "https://example.com/product/coffee",
+    "tag_color": "#FF5733",
+    "status": "Success",
+    "date": "2025-05-17",
+    "created_at": "2025-05-17 20:48:45",
+    "updated_at": "2025-05-17 21:12:56"
+  },
+  {
+    "id": 2,
+    "order_number": "ORD-002",
+    "customer_name": "Jane Smith",
+    "title": "Organic Tea Set",
+    "url": "https://store.com/inventory/tea",
+    "tag_color": "#33FF57",
+    "status": "Success",
+    "date": "2025-05-17",
+    "created_at": "2025-05-17 20:48:45",
+    "updated_at": "2025-05-17 21:26:27"
+  },
+  {
+    "id": 3,
+    "order_number": "ORD-003",
+    "customer_name": "Bob Johnson",
+    "title": "Specialty Chocolate",
+    "url": "https://loyalty.com/reward/chocolate",
+    "tag_color": "#3357FF",
+    "status": "Success",
+    "date": "2025-05-17",
+    "created_at": "2025-05-17 20:48:45",
+    "updated_at": "2025-05-17 21:15:00"
+  },
+  {
+    "id": 4,
+    "order_number": "ORD-004",
+    "customer_name": "Alice Brown",
+    "title": "Gift Card",
+    "url": "https://example.com/giftcard",
+    "tag_color": "#FF33A1",
+    "status": "Completed",
+    "date": "2025-05-17",
+    "created_at": "2025-05-17 20:48:45",
+    "updated_at": "2025-05-17 20:48:45"
+  }
+]
