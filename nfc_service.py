@@ -13,37 +13,59 @@ class FakeAPI:
 
     @staticmethod
     def fetch_tasks():
-        today = "2025-05-17"
-        return [
-            {
-                "id": 1,
-                "title": "Process Product Tag A",
-                "url": "https://example.com/product/a",
-                "tag_color": "#FF5733",
-                "date": today,
-            },
-            {
-                "id": 2,
-                "title": "Update Inventory Tag B",
-                "url": "https://store.com/inventory/b",
-                "tag_color": "#33FF57",
-                "date": today,
-            },
-            {
-                "id": 3,
-                "title": "Customer Loyalty Tag C",
-                "url": "https://loyalty.com/reward/c",
-                "tag_color": "#3357FF",
-                "date": today,
-            },
-            {
-                "id": 4,
-                "title": "Old Task",
-                "url": "https://example.com/old",
-                "tag_color": "#FF33A1",
-                "date": "2025-05-16",
-            },
-        ]
+        import requests
+        from datetime import datetime
+
+        # Get current date in YYYY-MM-DD format for filtering
+        today = datetime.now().strftime("%Y-%m-%d")
+        
+        try:
+            # Call the API to get today's tasks
+            response = requests.get("https://tap-on-it.com/api/profiles/getToday/")
+            
+            # Check if request was successful
+            if response.status_code == 200:
+                # Parse the JSON response
+                data = response.json()
+                return data
+            else:
+                # If API call fails, return fallback data
+                print(f"API call failed with status code: {response.status_code}")
+                return []
+        except Exception as e:
+            # Handle any exceptions (network issues, etc.)
+            print(f"Error fetching tasks: {e}")
+            # Return fallback data with current date
+            return [
+                {
+                    "id": 1,
+                    "title": "Process Product Tag A",
+                    "url": "https://example.com/product/a",
+                    "tag_color": "#FF5733",
+                    "date": today,
+                },
+                {
+                    "id": 2,
+                    "title": "Update Inventory Tag B",
+                    "url": "https://store.com/inventory/b",
+                    "tag_color": "#33FF57",
+                    "date": today,
+                },
+                {
+                    "id": 3,
+                    "title": "Customer Loyalty Tag C",
+                    "url": "https://loyalty.com/reward/c",
+                    "tag_color": "#3357FF",
+                    "date": today,
+                },
+                {
+                    "id": 4,
+                    "title": "Old Task",
+                    "url": "https://example.com/old",
+                    "tag_color": "#FF33A1",
+                    "date": "2025-05-16",  # Keep this as an old task for testing
+                },
+            ]
 
 
 class NFCReader:
